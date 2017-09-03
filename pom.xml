@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>N3.projects</groupId>
+    <artifactId>snail</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>hystrix</module>
+        <module>java</module>
+        <module>httpclient</module>
+        <module>apache-component</module>
+        <module>distribution</module>
+        <module>spring</module>
+        <module>protobuf</module>
+        <module>dubbo</module>
+    </modules>
+
+    <properties>
+        <!-- pom文件公共属性 -->
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- 依赖jar包版本号 -->
+        <!--<spring.version>3.2.18.RELEASE</spring.version>-->
+        <spring.version>4.3.3.RELEASE</spring.version>
+        <aspectj.version>1.8.5</aspectj.version>
+        <spring.statemachine.version>1.2.6.RELEASE</spring.statemachine.version>
+        <protobuf.version>3.4.0</protobuf.version>
+        <hystrix.version>1.5.6</hystrix.version>
+        <httpclient.version>4.4.1</httpclient.version>
+        <spymemcached.version>2.9.1</spymemcached.version>
+        <jedis.version>2.9.0</jedis.version>
+        <testng.version>6.10</testng.version>
+        <dubbo.version>2.5.3</dubbo.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <showDeprecation>true</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.17</version>
+                <configuration>
+                    <argLine>-Xmx2048m</argLine>
+                    <argLine>-XX:PermSize=512m -XX:MaxPermSize=1024m</argLine>  <!-- for jenkins -->
+                    <argLine>-XX:-UseSplitVerifier</argLine>
+                    <skip>true</skip>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <includes>
+                        <include>**/*Test.java</include>
+                        <include>**/*TestCase.java</include>
+                        <include>**/Test*.java</include>
+                    </includes>
+                    <excludes>
+                        <exclude>**/Abstract*.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>1.4.1</version>
+                <executions>
+                    <execution>
+                        <id>enforce-jdk-version</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireJavaVersion>
+                                    <version>[1.7.0, )</version>
+                                </requireJavaVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>enforce-banned-dependencies</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <bannedDependencies>
+                                    <!--是否检查传递性依赖(间接依赖)-->
+                                    <searchTransitive>true</searchTransitive>
+                                    <excludes>
+                                        <!--groupId[:artifactId][:version][:type][:scope][:classifier]-->
+                                        <exclude>junit:junit</exclude>
+                                        <exclude>org.testng:testng</exclude>
+                                        <!--<exclude>log4j:log4j</exclude>-->
+                                        <!--<exclude>org.slf4j:slf4j-log4j12</exclude>-->
+                                    </excludes>
+                                    <includes>
+                                        <include>junit:junit:test</include>
+                                        <include>org.testng:testng:test</include>
+                                    </includes>
+                                </bannedDependencies>
+                            </rules>
+                            <fail>true</fail>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
