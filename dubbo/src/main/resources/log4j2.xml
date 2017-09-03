@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="ERROR" shutdownHook="disable">
+
+	<Properties>
+		<Property name="logPath">logs</Property>
+		<Property name="backupPath">${logPath}/backup/</Property>
+		<Property name="logFileName">snail-dubbo</Property>
+		<Property name="logPattern">%d - %logger [%thread] %-5level %class{3}(%L) - %msg%n</Property>
+	</Properties>
+
+	<Appenders>
+
+		<!-- write log to log file -->
+		<!--<RollingFile name="dailyFile" fileName="${logPath}/${logFileName}.log"
+			filePattern="${backupPath}/${logFileName}.%d{yyyyMMdd}.log.gz">
+			<PatternLayout>
+				<Pattern>${logPattern}</Pattern>
+			</PatternLayout>
+			<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+		</RollingFile>-->
+
+		<!-- write log to console -->
+		<Console name="console">
+			<PatternLayout pattern="${logPattern}" />
+		</Console>
+
+	</Appenders>
+
+	<Loggers>
+		<Root level="DEBUG">
+			<AppenderRef ref="console" />
+		</Root>
+
+		<Logger name="org.springframework" level="INFO" />
+		<Logger name="org.apache.commons" level="INFO" />
+		<Logger name="org.apache.http" level="INFO" />
+		<Logger name="com.alibaba.dubbo" level="DEBUG" />
+		<Logger name="org.apache.zookeeper" level="INFO" />
+		<Logger name="org.I0Itec.zkclient" level="INFO" />
+
+	</Loggers>
+
+</Configuration>

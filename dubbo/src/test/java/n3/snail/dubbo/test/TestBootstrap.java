@@ -1,3 +1,6 @@
+package n3.snail.dubbo.test;
+
+import n3.snail.dubbo.boot.ApplicationBootstrap;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Test;
@@ -10,6 +13,6 @@ public class TestBootstrap extends AbstractTestNGSpringContextTests {
 
     @Test
     public void testBootstrap() {
-        logger.debug("***********");
+        ApplicationBootstrap.start(new String[0]);
     }
 }
