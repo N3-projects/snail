@@ -1,4 +1,4 @@
-package n3.snail.dubbo.test;
+package n3.snail.dubbo.test.boot;
 
 import n3.snail.dubbo.boot.ApplicationBootstrap;
 import org.springframework.test.context.ContextConfiguration;
