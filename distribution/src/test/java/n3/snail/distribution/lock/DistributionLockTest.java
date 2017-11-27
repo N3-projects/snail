@@ -1,9 +1,7 @@
-package n3;
+package n3.snail.distribution.lock;
 
 import static org.testng.Assert.*;
 import org.testng.annotations.Test;
-import n3.distribution.lock.DistributionLock;
-import n3.distribution.lock.SynchronizerType;
 
 /**
  * @author N3 on 2017/6/12.

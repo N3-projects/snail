@@ -1,4 +1,4 @@
-package n3.distribution.lock.sync.command;
+package n3.snail.distribution.lock.sync.command;
 
 import java.util.concurrent.atomic.AtomicReference;
 

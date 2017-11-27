@@ -1,9 +1,9 @@
-package n3.distribution.lock.sync.command;
+package n3.snail.distribution.lock.sync.command;
 
+import n3.snail.distribution.lock.sync.LockResource;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
-import n3.distribution.lock.sync.LockResource;
 
 /**
  * @author N3 on 2017/6/17.

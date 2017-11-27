@@ -1,4 +1,4 @@
-package n3.distribution.lock;
+package n3.snail.distribution.lock;
 
 /**相关常量设置
  * @author N3 on 2017/6/12.

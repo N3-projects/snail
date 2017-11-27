@@ -1,10 +1,10 @@
-package n3.distribution.lock.sync.command;
+package n3.snail.distribution.lock.sync.command;
 
+import n3.snail.distribution.lock.LockConstant;
+import n3.snail.distribution.lock.sync.LockResource;
 import net.spy.memcached.ConnectionFactoryBuilder;
 import net.spy.memcached.MemcachedClient;
 import net.spy.memcached.internal.OperationFuture;
-import n3.distribution.lock.LockConstant;
-import n3.distribution.lock.sync.LockResource;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

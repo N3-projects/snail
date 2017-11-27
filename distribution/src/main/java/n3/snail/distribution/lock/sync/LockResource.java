@@ -1,4 +1,4 @@
-package n3.distribution.lock.sync;
+package n3.snail.distribution.lock.sync;
 
 /**
  * @author N3 on 2017/6/12.

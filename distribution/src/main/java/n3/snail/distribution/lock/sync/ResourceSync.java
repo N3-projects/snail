@@ -1,6 +1,6 @@
-package n3.distribution.lock.sync;
+package n3.snail.distribution.lock.sync;
 
-import n3.distribution.lock.SynchronizerType;
+import n3.snail.distribution.lock.SynchronizerType;
 
 import java.util.concurrent.ConcurrentHashMap;
 

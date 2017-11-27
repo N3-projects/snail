@@ -1,4 +1,4 @@
-package n3.redisson;
+package n3.snail.distribution.lock.redisson;
 
 import org.redisson.config.ClusterServersConfig;
 import org.redisson.config.Config;

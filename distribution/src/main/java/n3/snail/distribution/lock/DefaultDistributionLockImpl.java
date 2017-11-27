@@ -1,7 +1,7 @@
-package n3.distribution.lock;
+package n3.snail.distribution.lock;
 
-import n3.distribution.lock.sync.LockResource;
-import n3.distribution.lock.sync.ResourceSync;
+import n3.snail.distribution.lock.sync.LockResource;
+import n3.snail.distribution.lock.sync.ResourceSync;
 
 /**分布式锁默认实现类
  * @author N3 on 2017/6/12.

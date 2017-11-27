@@ -1,12 +1,10 @@
-package n3;
+package n3.snail.distribution.lock;
 
 import org.testng.annotations.Test;
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.JedisPoolConfig;
-import n3.distribution.lock.sync.LockResource;
-import n3.distribution.lock.sync.command.CommandRegistry;
-import n3.distribution.lock.sync.command.RedisCommand;
+import redis.clients.jedis.*;
+import n3.snail.distribution.lock.sync.LockResource;
+import n3.snail.distribution.lock.sync.command.CommandRegistry;
+import n3.snail.distribution.lock.sync.command.RedisCommand;
 
 import java.util.Set;
 
@@ -51,5 +49,11 @@ public class RedisCommandTest {
         assertTrue(setSuc);
         boolean delSuc = redisCommand.del(key);
         assertTrue(delSuc);
+    }
+
+    @Test
+    public void testJedisCluster() {
+        JedisCluster jc = new JedisCluster(new HostAndPort("127.0.0.1", 7001));
+        jc.hset(new byte[1], null, null);
     }
 }

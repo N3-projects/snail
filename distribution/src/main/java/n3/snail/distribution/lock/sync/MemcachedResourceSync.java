@@ -1,7 +1,7 @@
-package n3.distribution.lock.sync;
+package n3.snail.distribution.lock.sync;
 
-import n3.distribution.lock.sync.command.CommandRegistry;
-import n3.distribution.lock.sync.command.MemcachedCommand;
+import n3.snail.distribution.lock.sync.command.CommandRegistry;
+import n3.snail.distribution.lock.sync.command.MemcachedCommand;
 
 /**依赖memcached实现的资源同步器
  * @author N3 on 2017/6/12.

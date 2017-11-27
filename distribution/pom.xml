@@ -32,6 +32,23 @@
         </dependency>
         <!-- redis end -->
 
+        <!-- TBSchedule start -->
+        <dependency>
+            <groupId>com.taobao.pamirs.schedule</groupId>
+            <artifactId>TBSchedule</artifactId>
+            <version>3.3.3.2</version>
+        </dependency>
+        <!-- TBSchedule end -->
+
+        <!-- String start -->
+        <!-- 直接依赖snail-spring -->
+        <dependency>
+            <groupId>N3.projects</groupId>
+            <artifactId>snail-spring</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- String end -->
+
         <!-- test start -->
         <dependency>
             <groupId>org.testng</groupId>
