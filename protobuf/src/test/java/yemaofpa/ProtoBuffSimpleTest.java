@@ -5,7 +5,6 @@ import com.example.tutorial.AddressBookProtos.Person;
 
 import com.example.tutorial.ExtraInfoProtos;
 import com.google.protobuf.*;
-import org.testng.annotations.Test;
 
 import java.io.*;
 import java.util.HashMap;
