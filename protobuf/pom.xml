@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>snail-protobuf</artifactId>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <build>
         <plugins>
@@ -55,7 +55,6 @@
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-            <version>${protobuf.version}</version>
         </dependency>
         <!-- protobuf end -->
 
@@ -63,7 +62,6 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>${testng.version}</version>
             <scope>test</scope>
         </dependency>
         <!-- test end -->
