@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package tutorial;   //会被解析到tutorial包路径下，除非明确指定java_package
+
+option java_package = "n3.sail.protobuf.schema";   //指定解析到哪个包路径下
+option java_outer_classname = "UserCacheSchema";    //指定解析的类名称，不指定时默认采用驼峰命名
+
+message UserCacheDTO {
+    CoreAccountDTO coreAccountDTO = 1;
+    OperatorDTO operatorDTO = 2;
+}
+
+message CoreAccountDTO {
+    string coreAccountId = 1;
+    string status = 2;
+}
+
+message OperatorDTO {
+    string operatorId = 1;
+    string type = 2;
+}

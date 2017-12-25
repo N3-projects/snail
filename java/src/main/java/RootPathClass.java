@@ -1,4 +1,4 @@
-import n3.java.classload.ClassLoadingSemaphore;
+import n3.snail.java.classload.ClassLoadingSemaphore;
 
 /**
  * @author N3 on 2017/3/31.

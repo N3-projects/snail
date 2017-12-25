@@ -7,11 +7,15 @@
        http://code.alibabatech.com/schema/dubbo
        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
+    <dubbo:annotation />
+
     <dubbo:application name="snail-dubbo" logger="slf4j" />
 
     <dubbo:registry id="defaultRegistry" address="zookeeper://192.168.137.96:2181" default="true"/>
 
-    <dubbo:protocol id="dubboProtocol" name="dubbo" port="22522" accesslog="false"/>
+    <dubbo:protocol id="dubboProtocol" name="dubbo" serialization="n3ProtobufSerialization" port="22522" accesslog="false"/>
+
+    <dubbo:provider host="127.0.0.1" filter="-accesslog" retries="0" />
 
     <dubbo:service interface="n3.snail.dubbo.provider.SimpleProvider" ref="simpleProvider" protocol="dubboProtocol" version="1.0.0"/>
 </beans>

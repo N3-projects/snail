@@ -116,6 +116,7 @@
             </exclusions>
         </dependency>
 
+        <!-- 目前是spring statemachine需要依赖spring-message -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-messaging</artifactId>

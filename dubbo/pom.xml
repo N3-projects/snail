@@ -127,6 +127,14 @@
         </dependency>
         <!-- dubbo end -->
 
+        <!-- protobuf start -->
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>${protobuf.version}</version>
+        </dependency>
+        <!-- protobuf end -->
+
         <!-- zk start -->
         <dependency>
             <groupId>org.apache.zookeeper</groupId>

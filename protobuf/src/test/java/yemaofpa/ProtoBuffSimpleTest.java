@@ -3,9 +3,13 @@ package yemaofpa;
 import com.example.tutorial.AddressBookProtos.AddressBook;
 import com.example.tutorial.AddressBookProtos.Person;
 
+import com.example.tutorial.ExtraInfoProtos;
+import com.google.protobuf.*;
 import org.testng.annotations.Test;
 
 import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Unit test for simple App.
@@ -47,7 +51,7 @@ public class ProtoBuffSimpleTest {
         return person.build();
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
 
         // Main function:  Reads the entire address book from a file,
         //   adds one person based on user input, then writes it back out to the same
@@ -75,6 +79,29 @@ public class ProtoBuffSimpleTest {
         byte[] bytes = addressBook.toByteArray();
         AddressBook addressBook2 = AddressBook.parseFrom(bytes);
         System.out.println(addressBook2.toString());
+
+        ExtraInfoProtos.ExtraInfo.Builder extraInfoBuilder = ExtraInfoProtos.ExtraInfo.newBuilder();
+        extraInfoBuilder.putValues("foo", "bar");
+        extraInfoBuilder.putAllValues(null);
+        ExtraInfoProtos.ExtraInfo extraInfo = extraInfoBuilder.build();
+
+        Map<String, String> map = new HashMap<>();
+        map.put("foo1", "bar1");
+        map.put("foo2", "bar2");
+
+        MapEntryLite mapEntry = MapEntryLite.newDefaultInstance(WireFormat.FieldType.STRING, "", WireFormat.FieldType.STRING, "");
+//        mapEntry.
+    }
+
+    private static <K, V> void serializeMapTo(CodedOutputStream out, Map<K, V> m, MapEntry<K, V> defaultEntry,
+                                              int fieldNumber) throws IOException {
+        for (Map.Entry<K, V> entry : m.entrySet()) {
+            out.writeMessage(fieldNumber,
+                    defaultEntry.newBuilderForType()
+                            .setKey(entry.getKey())
+                            .setValue(entry.getValue())
+                            .build());
+        }
     }
 
 }

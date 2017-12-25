@@ -9,10 +9,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class PingProcessor {
 
-    public PingProcessor() {
-        System.out.println("******************");
-    }
-
     public String action() {
         return "pong";
     }

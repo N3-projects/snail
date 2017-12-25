@@ -15,7 +15,8 @@ import static org.testng.Assert.*;
 @ContextConfiguration(locations = { "classpath:dubbo-provider-test.xml" })
 public class TestSimpleProvider extends AbstractTestNGSpringContextTests {
 
-    @Reference(url="dubbo://127.0.0.1:22522", version="1.0.0", timeout=900000)
+    @Reference(url="dubbo://127.0.0.1:22522/n3.snail.dubbo.provider.SimpleProvider?serialization=n3ProtobufSerialization", version="1.0.0", timeout=900000)
+//    @Reference(registry = "zkRegistry", version="1.0.0", timeout=900000)
     private SimpleProvider simpleProvider;
 
     @Test

@@ -12,6 +12,9 @@
     <!-- dubbo start -->
     <dubbo:annotation />
     <dubbo:application name="snail-dubbo-test" logger="slf4j"/>
+
+    <dubbo:registry id="zkRegistry" address="zookeeper://192.168.137.96:2181" default="true"/>
+
     <!-- dubbo end -->
 
 </beans>
