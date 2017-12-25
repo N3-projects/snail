@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="ERROR" shutdownHook="disable">
+
+	<Properties>
+		<Property name="logPath">logs</Property>
+		<Property name="backupPath">${logPath}/backup/</Property>
+		<Property name="logFileName">snail-dubbo</Property>
+		<Property name="logPattern">%d - %logger [%thread] %-5level %class{3}(%L) - %msg%n</Property>
+	</Properties>
+
+	<Appenders>
+
+		<!-- write log to console -->
+		<Console name="console">
+			<PatternLayout pattern="${logPattern}" />
+		</Console>
+
+	</Appenders>
+
+	<Loggers>
+		<Root level="DEBUG">
+			<AppenderRef ref="console" />
+		</Root>
+
+		<Logger name="org.springframework" level="info" />
+		<Logger name="org.apache.commons" level="debug" />
+		<Logger name="org.apache.zookeeper" level="debug" />
+		<Logger name="org.I0Itec.zkclient" level="debug" />
+		<Logger name="redis.clients.jedis" level="debug" />
+
+	</Loggers>
+
+</Configuration>

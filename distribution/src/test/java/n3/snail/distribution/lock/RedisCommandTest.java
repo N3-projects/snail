@@ -16,29 +16,6 @@ import static org.testng.Assert.assertTrue;
 public class RedisCommandTest {
 
     @Test
-    public void testJedisApi() {
-        JedisPool pool = new JedisPool(new JedisPoolConfig(), "192.168.137.23");
-
-        Jedis jedis = null;
-        try {
-            jedis = pool.getResource();
-            /// ... do stuff here ... for example
-//            jedis.set("foo", "bar");
-//            String foobar = jedis.get("foo");
-            jedis.zadd("sose", 0, "car");
-            jedis.zadd("sose", 0, "bike");
-            Set<String> sose = jedis.zrange("sose", 0, -1);
-            jedis.set("lockkey", "1", "NX" , "PX", 20000L);
-        } finally {
-            if (jedis != null) {
-                jedis.close();
-            }
-        }
-        /// ... when closing your application:
-        pool.destroy();
-    }
-
-    @Test
     public void testRedisCommand() {
         RedisCommand redisCommand = CommandRegistry.getInstance().getRedisCommand();
 
