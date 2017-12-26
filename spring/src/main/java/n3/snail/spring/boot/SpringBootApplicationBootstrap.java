@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 通过@SpringBootApplication注解指定的scanBasePackages加载指定目录下的SpringConfiguration配置<br>
  * <br>
  * 启动参数参考：<br>
- * -server -XX:+UseG1GC -Xms1024m -Xmx1024m -XX:MaxGCPauseMillis=200
+ * -server -XX:+UseG1GC -Xms1024m -Xmx1024m -XX:MaxGCPauseMillis=200 -XX:InitiatingHeapOccupancyPercent=45
  * @author hzyemao
  * @version 1.0 , 2017/3/9
  */
