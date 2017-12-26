@@ -7,7 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * SpringBoot 启动类<br>
  * 应用启动时会自动加载src/main/resource目录下的application.properties配置文件，用于指定系统级的基本配置<br>
- * 通过@SpringBootApplication注解指定的scanBasePackages加载指定目录下的SpringConfiguration配置
+ * 通过@SpringBootApplication注解指定的scanBasePackages加载指定目录下的SpringConfiguration配置<br>
+ * <br>
+ * 启动参数参考：<br>
+ * -server -XX:+UseG1GC -Xms1024m -Xmx1024m -XX:MaxGCPauseMillis=200
  * @author hzyemao
  * @version 1.0 , 2017/3/9
  */

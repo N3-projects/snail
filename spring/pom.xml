@@ -154,6 +154,11 @@
             <artifactId>tomcat-embed-websocket</artifactId>
             <version>${tomcat.version}</version>
         </dependency>
+        <!-- SpringBoot Actuator提供监控及优雅停机-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
         <!-- spring boot end -->
 
         <dependency>
