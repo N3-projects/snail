@@ -1,4 +1,4 @@
-package n3;
+package n3.snail.spring.machine;
 
 import org.springframework.statemachine.StateContext;
 import org.springframework.statemachine.StateMachine;

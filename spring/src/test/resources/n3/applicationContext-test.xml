@@ -11,9 +11,8 @@
        http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 
     <description>Spring公共配置文件</description>
-    <context:component-scan base-package="n3" />
+    <context:annotation-config />
+    <context:component-scan base-package="n3.snail.spring" />
     <aop:aspectj-autoproxy proxy-target-class="true"/>
-
-    <!--<bean class="n3.HelloWorldStateMachineFactory" />-->
 
 </beans>

@@ -1,4 +1,4 @@
-package n3;
+package n3.snail.spring.machine;
 
 /**
  * @author N3 on 2017/8/18.
