@@ -19,8 +19,11 @@ public class SpringBootApplicationBootstrap {
 
     public static void main(String[] args) {
         SpringApplication app = new SpringApplication(SpringBootApplicationBootstrap.class);
-//        app.setWebEnvironment(false);     //默认为true，如果不需要加载web容器可设置为false
-        app.setBannerMode(Banner.Mode.OFF); //启动日志不显示广告位
+        // 默认为true，如果不需要加载web容器可设置为WebApplicationType.NONE
+//        app.setWebApplicationType(WebApplicationType.NONE);
+
+        //启动日志不显示广告位
+        app.setBannerMode(Banner.Mode.OFF);
 
         // 这里可以使用api指定xml配置文件，但一般用注解形式注入
 //        Set<Object> set = new HashSet<Object>();

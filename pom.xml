@@ -32,10 +32,10 @@
         <commons.codec.version>1.6</commons.codec.version>
         <commons.io.version>2.5</commons.io.version>
         <slf4j.version>1.7.25</slf4j.version>
-        <log4j2.version>2.5</log4j2.version>
+        <log4j2.version>2.11.2</log4j2.version>
         <httpclient.version>4.4.1</httpclient.version>
-        <spring.version>4.3.10.RELEASE</spring.version>
-        <spring.boot.version>1.5.6.RELEASE</spring.boot.version>
+        <spring.version>5.1.9.RELEASE</spring.version>
+        <spring.boot.version>2.1.8.RELEASE</spring.boot.version>
         <aspectj.version>1.8.5</aspectj.version>
         <spring.statemachine.version>1.2.6.RELEASE</spring.statemachine.version>
         <zookeeper.version>3.3.6</zookeeper.version>
@@ -141,21 +141,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- test start -->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-test</artifactId>
-                <version>${spring.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.testng</groupId>
-                <artifactId>testng</artifactId>
-                <version>${testng.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <!-- test end -->
-
             <!-- apache commons start -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -305,15 +290,33 @@
 
             <!-- spring boot start -->
             <dependency>
+                <!-- Import dependency management from Spring Boot -->
                 <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
                 <version>${spring.boot.version}</version>
                 <exclusions>
                     <exclusion>
-                        <groupId>ch.qos.logback</groupId>
-                        <artifactId>logback-classic</artifactId>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-logging</artifactId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-log4j2</artifactId>
+                <version>${spring.boot.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -382,6 +385,21 @@
                 <version>${tbschedule.version}</version>
             </dependency>
             <!-- TBSchedule end -->
+
+            <!-- test start -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${testng.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- test end -->
         </dependencies>
     </dependencyManagement>
 

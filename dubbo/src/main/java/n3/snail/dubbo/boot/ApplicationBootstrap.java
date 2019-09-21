@@ -2,6 +2,7 @@ package n3.snail.dubbo.boot;
 
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.concurrent.locks.LockSupport;
@@ -20,7 +21,7 @@ public class ApplicationBootstrap {
 
     public static void start(String[] args) {
         SpringApplication app = new SpringApplication(ApplicationBootstrap.class);
-        app.setWebEnvironment(false);
+        app.setWebApplicationType(WebApplicationType.NONE);
         app.setBannerMode(Banner.Mode.OFF);
 
         // 这里可以使用api指定xml配置文件，但一般用注解形式注入
