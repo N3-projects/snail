@@ -26,7 +26,7 @@ public class SpringBootApplicationBootstrap {
         app.setBannerMode(Banner.Mode.OFF);
 
         // 这里可以使用api指定xml配置文件，但一般用注解形式注入
-//        Set<Object> set = new HashSet<Object>();
+//        Set<String> set = new HashSet<>();
 //        set.add("classpath:applicationContext.xml");
 //        app.setSources(set);
         app.run(args);

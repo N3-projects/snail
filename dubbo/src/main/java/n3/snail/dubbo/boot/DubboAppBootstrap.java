@@ -12,7 +12,7 @@ import java.util.concurrent.locks.LockSupport;
  * @version 1.0 , 2017/3/9
  */
 @SpringBootApplication(scanBasePackages = "n3.snail.dubbo.boot")
-public class ApplicationBootstrap {
+public class DubboAppBootstrap {
 
     public static void main(String[] args) {
         start(args);
@@ -20,18 +20,16 @@ public class ApplicationBootstrap {
     }
 
     public static void start(String[] args) {
-        SpringApplication app = new SpringApplication(ApplicationBootstrap.class);
+        SpringApplication app = new SpringApplication(DubboAppBootstrap.class);
+        // 纯dubbo服务应用，不需要提供web服务
         app.setWebApplicationType(WebApplicationType.NONE);
         app.setBannerMode(Banner.Mode.OFF);
 
-        // 这里可以使用api指定xml配置文件，但一般用注解形式注入
-//        Set<Object> set = new HashSet<Object>();
-//        set.add("classpath:applicationContext.xml");
-//        app.setSources(set);
         app.run(args);
     }
 
     private static void park() {
+        // todo 如何解决优雅停机
         LockSupport.park();
     }
 

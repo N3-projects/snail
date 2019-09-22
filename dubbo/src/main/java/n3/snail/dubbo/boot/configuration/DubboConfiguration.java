@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ImportResource;
  * @version 1.0 , 2017/3/9
  */
 @Configuration
-@ImportResource({"classpath:dubbo.xml"})
+@ImportResource({"classpath*:dubbo.xml"})
 public class DubboConfiguration {
 
 }

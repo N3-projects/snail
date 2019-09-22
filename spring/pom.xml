@@ -11,7 +11,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <tomcat.version>8.5.16</tomcat.version>
+        <tomcat.version>8.5.45</tomcat.version>
     </properties>
 
     <dependencies>
