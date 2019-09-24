@@ -50,13 +50,23 @@
     </properties>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>2.7</version>
+                <version>3.1.0</version>
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
+                    <overwrite>true</overwrite>
                 </configuration>
             </plugin>
             <plugin>
@@ -103,7 +113,7 @@
                         <configuration>
                             <rules>
                                 <requireJavaVersion>
-                                    <version>[1.7.0, )</version>
+                                    <version>[1.8.0, )</version>
                                 </requireJavaVersion>
                             </rules>
                         </configuration>
@@ -265,6 +275,11 @@
                 <artifactId>spring-tx</artifactId>
                 <version>${spring.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
             <!-- 目前是spring statemachine需要依赖spring-message -->
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -316,6 +331,11 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-log4j2</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-jdbc</artifactId>
                 <version>${spring.boot.version}</version>
             </dependency>
             <dependency>
@@ -379,11 +399,11 @@
             <!-- jedis end -->
 
             <!-- TBSchedule start -->
-            <dependency>
+            <!--<dependency>
                 <groupId>com.taobao.pamirs.schedule</groupId>
                 <artifactId>TBSchedule</artifactId>
                 <version>${tbschedule.version}</version>
-            </dependency>
+            </dependency>-->
             <!-- TBSchedule end -->
 
             <!-- test start -->

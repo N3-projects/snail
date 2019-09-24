@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>snail-java</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
