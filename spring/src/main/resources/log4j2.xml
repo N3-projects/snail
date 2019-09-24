@@ -22,11 +22,14 @@
 			<AppenderRef ref="console" />
 		</Root>
 
+		<Logger name="n3.snail" level="debug" />
+
 		<Logger name="org.springframework" level="info" />
 		<Logger name="org.apache.commons" level="debug" />
 		<Logger name="org.apache.zookeeper" level="debug" />
 		<Logger name="org.I0Itec.zkclient" level="debug" />
 		<Logger name="redis.clients.jedis" level="debug" />
+		<Logger name="org.hibernate.validator" level="error" />
 
 	</Loggers>
 
