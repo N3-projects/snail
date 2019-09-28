@@ -17,12 +17,23 @@ public class DataSourceConfiguration {
 
     @Primary
     @Bean
-    @ConfigurationProperties("spring.datasource.druid.app.main")
-    public DruidDataSource appMainDataSource(){
-        DruidDataSource build = DruidDataSourceBuilder.create().build();
+    @ConfigurationProperties("spring.datasource.druid.orgrimmar.master")
+    public DruidDataSource orgrimmarMasterDataSource(){
+        DruidDataSource master = DruidDataSourceBuilder.create().build();
         //获取连接时最大等待时间，单位毫秒。配置了maxWait之后，缺省启用公平锁（会影响性能），可手动设置非公平锁
-        build.setUseUnfairLock(true);
-        return build;
+        master.setUseUnfairLock(true);
+        return master;
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.druid.orgrimmar.slave")
+    public DruidDataSource orgrimmarSlaveDataSource(){
+        DruidDataSource slave = DruidDataSourceBuilder.create().build();
+        //获取连接时最大等待时间，单位毫秒。配置了maxWait之后，缺省启用公平锁（会影响性能），可手动设置非公平锁
+        slave.setUseUnfairLock(true);
+        //从库设置为read only
+        slave.setDefaultReadOnly(true);
+        return slave;
     }
 
     @Bean
