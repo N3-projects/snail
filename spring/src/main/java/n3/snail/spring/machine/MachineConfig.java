@@ -11,10 +11,12 @@ import org.springframework.statemachine.config.configurers.StateConfigurer;
 import java.util.EnumSet;
 
 /**
+ * 适用于单例状态机，对于实际业务对象状态机不太适用
  * @author N3 on 2017/8/18.
  */
 //@Configuration
 //@EnableStateMachine
+@Deprecated
 public class MachineConfig
         extends EnumStateMachineConfigurerAdapter<State, Event> {
 
