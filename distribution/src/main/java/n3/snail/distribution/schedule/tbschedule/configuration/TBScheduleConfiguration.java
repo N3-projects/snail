@@ -1,6 +1,6 @@
 package n3.snail.distribution.schedule.tbschedule.configuration;
 
-import com.taobao.pamirs.schedule.strategy.TBScheduleManagerFactory;
+//import com.taobao.pamirs.schedule.strategy.TBScheduleManagerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -30,18 +30,18 @@ import java.util.Map;
 @ComponentScan("n3.snail.distribution.schedule.tbschedule")
 public class TBScheduleConfiguration {
 
-    @Bean(initMethod= "init")
-    public TBScheduleManagerFactory getTBScheduleManagerFactory() {
-        Map<String,String> zkConfig = new HashMap<>();
-        zkConfig.put("zkConnectString", "192.168.137.96");
-        zkConfig.put("rootPath", "/taobao-pamirs-schedule/lichking");
-        zkConfig.put("zkSessionTimeout", "60000");
-        zkConfig.put("userName", "lok_tar");
-        zkConfig.put("password", "ogar");
-        zkConfig.put("isCheckParentPath", "true");
-
-        TBScheduleManagerFactory tbScheduleManagerFactory = new TBScheduleManagerFactory();
-        tbScheduleManagerFactory.setZkConfig(zkConfig);
-        return tbScheduleManagerFactory;
-    }
+//    @Bean(initMethod= "init")
+//    public TBScheduleManagerFactory getTBScheduleManagerFactory() {
+//        Map<String,String> zkConfig = new HashMap<>();
+//        zkConfig.put("zkConnectString", "192.168.137.96");
+//        zkConfig.put("rootPath", "/taobao-pamirs-schedule/lichking");
+//        zkConfig.put("zkSessionTimeout", "60000");
+//        zkConfig.put("userName", "lok_tar");
+//        zkConfig.put("password", "ogar");
+//        zkConfig.put("isCheckParentPath", "true");
+//
+//        TBScheduleManagerFactory tbScheduleManagerFactory = new TBScheduleManagerFactory();
+//        tbScheduleManagerFactory.setZkConfig(zkConfig);
+//        return tbScheduleManagerFactory;
+//    }
 }
