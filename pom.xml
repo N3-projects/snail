@@ -46,7 +46,7 @@
         <spymemcached.version>2.9.1</spymemcached.version>
         <jedis.version>2.9.0</jedis.version>
         <tbschedule.version>3.3.3.2</tbschedule.version>
-        <poi.version>3.15</poi.version>
+        <poi.version>4.1.2</poi.version>
     </properties>
 
     <build>
