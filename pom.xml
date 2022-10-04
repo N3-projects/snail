@@ -42,7 +42,7 @@
         <zkclient.version>0.10</zkclient.version>
         <dubbo.version>2.5.3</dubbo.version>
         <hystrix.version>1.5.6</hystrix.version>
-        <protobuf.version>3.4.0</protobuf.version>
+        <protobuf.version>3.16.3</protobuf.version>
         <spymemcached.version>2.9.1</spymemcached.version>
         <jedis.version>2.9.0</jedis.version>
         <tbschedule.version>3.3.3.2</tbschedule.version>
